@@ -1,0 +1,23 @@
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: HTML Code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js
+
+note over browser:
+The browser executes the JavaScript code,
+sending a GET request to fetch data.json
+from the server.
+end note
+
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: The raw data of the notes (data.json) \n [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}, ...]
+
+note over browser:
+The code fetches the notes from the server 
+as JSON-data and adds HTML elements for 
+displaying the notes to the page using the 
+DOM-API.
+end note
